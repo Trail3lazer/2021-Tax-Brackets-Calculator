@@ -7,14 +7,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./income-form.component.scss'],
 })
 export class IncomeFormComponent implements OnInit {
-  private form!: FormGroup;
+  public primaryControl = this.builder.control(0);
+  public secondaryControl = this.builder.control(0);
+  public form: FormGroup = this.builder.group({
+    primary: this.primaryControl,
+    secondary: this.secondaryControl,
+  });
 
   constructor(private readonly builder: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.form = this.builder.group({
-      primary: this.builder.control(0),
-      secondary: this.builder.control(0),
-    });
-  }
+  ngOnInit(): void {}
 }

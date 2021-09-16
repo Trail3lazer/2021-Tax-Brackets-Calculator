@@ -1,1 +1,9 @@
-<p>income-form works!</p>
+<form [formGroup]="form">
+    <label for="primaryIncome">Primary <app-tooltip 
+        top
+        [activatingText]="'gross income'" 
+        [helpText]="'Your total yearly income before anything is taken out like taxes'"></app-tooltip
+        >.</label>
+    <input type="number" formControlName="primaryControl" name="primaryIncome">
+    <input type="number" formControlName="secondaryControl" name="secondaryIncome">
+</form>
