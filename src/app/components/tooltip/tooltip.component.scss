@@ -1,29 +1,29 @@
-.tooltip {
+.app-tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted blue;
+    border-bottom: 1px dashed blue;
 }
   
   /* Tooltip text */
-  .tooltip .tooltiptext {
+  .app-tooltip .app-tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 240px;
     background-color: black;
     color: #fff;
-    text-align: center;
-    padding: 5px 0;
+    text-align: left;
     border-radius: 6px;
+    padding: 15px;
    
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
   }
   
-  .tooltip:hover .tooltiptext {
+  .app-tooltip:hover .app-tooltiptext {
     visibility: visible;
   }
 
-  :host-context([right]) .tooltip .tooltiptext{
+  :host-context([right]) .app-tooltip .app-tooltiptext{
     top: -5px;
     left: 105%;
 
@@ -39,7 +39,7 @@
       }
   }
 
-  :host-context([left]) .tooltip .tooltiptext {
+  :host-context([left]) .app-tooltip .app-tooltiptext {
     top: -5px;
     right: 105%;
 
@@ -55,8 +55,8 @@
       }
   }
 
-  :host-context([top]) .tooltip .tooltiptext {
-    width: 120px;
+  :host-context([top]) .app-tooltip .app-tooltiptext {
+    min-width: 120px;
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
@@ -73,8 +73,8 @@
       }
   }
 
-  :host-context([bottom]) .tooltip .tooltiptext {
-    width: 120px;
+  :host-context([bottom]) .app-tooltip .app-tooltiptext {
+    min-width: 120px;
     top: 100%;
     left: 50%;
     margin-left: -60px;

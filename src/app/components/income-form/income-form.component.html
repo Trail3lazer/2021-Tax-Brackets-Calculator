@@ -1,9 +1,16 @@
-<form [formGroup]="form">
+<form [formGroup]="form" class="col-6 mb-3">
     <label for="primaryIncome">Primary <app-tooltip 
         top
-        [activatingText]="'gross income'" 
-        [helpText]="'Your total yearly income before anything is taken out like taxes'"></app-tooltip
-        >.</label>
-    <input type="number" formControlName="primaryControl" name="primaryIncome">
-    <input type="number" formControlName="secondaryControl" name="secondaryIncome">
+        helpText="Your total yearly income before anything is taken out like taxes.">gross income </app-tooltip>
+    </label>
+    <input type="number" formControlName="primary" name="primaryIncome" class="form-control">
+    <ng-container *ngIf="status === 'joint'">
+        <br/>
+        <label for="secondaryIncome">Secondary <app-tooltip
+            top
+            helpText="If you are filing taxes jointly, your significat other's total yearly income before anything is taken out like taxes; Otherwise 0."
+            >gross income </app-tooltip>
+        </label>
+        <input type="number" formControlName="secondary" name="secondaryIncome" class="form-control">
+    </ng-container>
 </form>

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { JointService } from './joint.service';
+import { TaxService } from './tax.service';
 
 describe('JointCalculatorServiceService', () => {
-  let service: JointService;
+  let service: TaxService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(JointService);
+    service = TestBed.inject(TaxService);
   });
 
   it('should be created', () => {

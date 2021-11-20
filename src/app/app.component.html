@@ -1,5 +1,11 @@
-<h1 *ngIf="vm$ | async as vm">
-    Primary Income: {{vm.incomes.primary}}
-    Secondary Income {{vm.incomes.secondary}}
-</h1>
-<app-income-form></app-income-form>
+<div *ngIf="vm$ | async as vm" class="container">
+    <h1>Tax Bracket Calculator</h1>
+    <div class="row mb-3">
+        <button (click)="changeStatus('joint')" class="btn btn-outline-primary col-4 col-lg-3 ms-3 me-5" [attr.active]="vm.status === 'joint'">Filing Jointly</button>
+        <button (click)="changeStatus('single')" class="btn btn-outline-primary col-4 col-lg-3" [attr.active]="vm.status === 'single'">Filing Single</button>
+    </div>
+    <ng-container [ngSwitch]="vm.status">
+        <app-joint *ngSwitchCase="'joint'" [vm]="vm"></app-joint>
+        <app-single *ngSwitchCase="'single'" [vm]="vm"></app-single>
+    </ng-container>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Attribute, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tooltip',
@@ -6,6 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
-  @Input() activatingText: string;
-  @Input() helpText: string;
+  constructor(@Attribute('helpText') public helpText: string) {}
 }

@@ -1,0 +1,10 @@
+<h2 class="mb-3">
+    Primary Income: {{vm.incomes.primary}}
+    <br/>
+    Secondary Income {{vm.incomes.secondary}}
+</h2>
+<app-income-form [status]="vm.status"></app-income-form>
+
+<h2>
+    Taxes: {{vm.totals | currency:"USD"}}
+</h2>
