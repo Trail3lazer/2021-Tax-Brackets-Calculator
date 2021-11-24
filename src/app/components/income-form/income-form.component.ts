@@ -10,7 +10,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { distinct } from 'rxjs/operators';
 import { FilingStatus } from 'src/app/models/FilingStatus';
-import { IIncome, InfoService } from 'src/app/services/info.service';
+import { InfoService } from 'src/app/services/info.service';
+import { IIncome } from 'src/app/models/IIncome';
 
 @Component({
   selector: 'app-income-form',

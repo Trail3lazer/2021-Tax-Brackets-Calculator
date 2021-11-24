@@ -11,11 +11,10 @@ import { TaxService } from './services/tax.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  private filingStatus$$ = new BehaviorSubject<FilingStatus>('joint');
   public vm$ = combineLatest([
     this.infoService.incomes$,
     this.taxService.TotalTax$,
-    this.filingStatus$$,
+    this.infoService.filingStatus$,
   ]).pipe(
     map(([incomes, totals, status]) => ({
       incomes,
@@ -29,6 +28,6 @@ export class AppComponent {
   ) {}
 
   public changeStatus(status: FilingStatus) {
-    this.filingStatus$$.next(status);
+    this.infoService.nextFilingStatus = status;
   }
 }
